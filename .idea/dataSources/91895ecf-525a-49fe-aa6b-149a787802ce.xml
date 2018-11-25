@@ -1110,87 +1110,527 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="279" parent="6" name="cities"/>
-    <table id="280" parent="6" name="streets"/>
-    <table id="281" parent="6" name="users"/>
-    <column id="282" parent="279" name="id">
+    <table id="279" parent="6" name="addresses"/>
+    <table id="280" parent="6" name="cities"/>
+    <table id="281" parent="6" name="districts"/>
+    <table id="282" parent="6" name="entrance_cost"/>
+    <table id="283" parent="6" name="list_of_completed_works"/>
+    <table id="284" parent="6" name="positions"/>
+    <table id="285" parent="6" name="positions_duties"/>
+    <table id="286" parent="6" name="priority_list"/>
+    <table id="287" parent="6" name="streets"/>
+    <table id="288" parent="6" name="types_of_work"/>
+    <table id="289" parent="6" name="uesr_district"/>
+    <table id="290" parent="6" name="users"/>
+    <table id="291" parent="6" name="view_of_work_performed"/>
+    <table id="292" parent="6" name="view_types"/>
+    <column id="293" parent="279" name="idaddresses">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="283" parent="279" name="name">
+    <column id="294" parent="279" name="city">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="295" parent="279" name="street">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="296" parent="279" name="number">
+      <Position>4</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="297" parent="279" name="number_o_ floors">
+      <Position>5</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="298" parent="279" name="number_of_entrances">
+      <Position>6</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="299" parent="279" name="priority">
+      <Position>7</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="300" parent="279" name="district_number">
+      <Position>8</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="301" parent="279" name="City_key_idx">
+      <ColNames>city</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="302" parent="279" name="Street_key_idx">
+      <ColNames>street</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="303" parent="279" name="Priority_key_idx">
+      <ColNames>priority</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="304" parent="279" name="District_key_idx">
+      <ColNames>district_number</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="305" parent="279" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idaddresses
+street
+city
+priority
+district_number</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="306" parent="279" name="City_key">
+      <ColNames>city</ColNames>
+      <RefSchemaName>supervisorsystem</RefSchemaName>
+      <RefTableName>cities</RefTableName>
+      <RefColNames>idcities</RefColNames>
+    </foreign-key>
+    <foreign-key id="307" parent="279" name="Street_key">
+      <ColNames>street</ColNames>
+      <RefSchemaName>supervisorsystem</RefSchemaName>
+      <RefTableName>streets</RefTableName>
+      <RefColNames>idstreets</RefColNames>
+    </foreign-key>
+    <foreign-key id="308" parent="279" name="Priority_key">
+      <ColNames>priority</ColNames>
+      <RefSchemaName>supervisorsystem</RefSchemaName>
+      <RefTableName>priority_list</RefTableName>
+      <RefColNames>idpriority_list</RefColNames>
+    </foreign-key>
+    <foreign-key id="309" parent="279" name="District_key">
+      <ColNames>district_number</ColNames>
+      <RefSchemaName>supervisorsystem</RefSchemaName>
+      <RefTableName>districts</RefTableName>
+      <RefColNames>iddistricts</RefColNames>
+    </foreign-key>
+    <column id="310" parent="280" name="idcities">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="311" parent="280" name="name">
       <Position>2</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="284" parent="279" name="PRIMARY">
+    <key id="312" parent="280" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>idcities</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="285" parent="280" name="id">
+    <column id="313" parent="281" name="iddistricts">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="286" parent="280" name="name">
+    <column id="314" parent="281" name="name">
       <Position>2</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="287" parent="280" name="PRIMARY">
+    <key id="315" parent="281" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>iddistricts</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="288" parent="281" name="id">
+    <column id="316" parent="282" name="identrance_cost">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="289" parent="281" name="first_name">
+    <column id="317" parent="282" name="min">
+      <Position>2</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="318" parent="282" name="max">
+      <Position>3</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="319" parent="282" name="cost">
+      <Position>4</Position>
+      <DataType>decimal(10,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="320" parent="282" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>identrance_cost</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="321" parent="283" name="idlist_of_completed_works">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="322" parent="283" name="user">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="323" parent="283" name="adress">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="324" parent="283" name="number_of_entrances">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="325" parent="283" name="view_of_work_performed">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="326" parent="283" name="comment">
+      <Position>6</Position>
+      <DataType>varchar(150)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="327" parent="283" name="date">
+      <Position>7</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="328" parent="283" name="Work_user_key_idx">
+      <ColNames>user</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="329" parent="283" name="Work_adress_key_idx">
+      <ColNames>adress</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="330" parent="283" name="Work_view_key_idx">
+      <ColNames>view_of_work_performed</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="331" parent="283" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idlist_of_completed_works
+user
+adress
+view_of_work_performed</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="332" parent="283" name="Work_user_key">
+      <ColNames>user</ColNames>
+      <RefSchemaName>supervisorsystem</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>idusers</RefColNames>
+    </foreign-key>
+    <foreign-key id="333" parent="283" name="Work_adress_key">
+      <ColNames>adress</ColNames>
+      <RefSchemaName>supervisorsystem</RefSchemaName>
+      <RefTableName>addresses</RefTableName>
+      <RefColNames>idaddresses</RefColNames>
+    </foreign-key>
+    <foreign-key id="334" parent="283" name="Work_view_key">
+      <ColNames>view_of_work_performed</ColNames>
+      <RefSchemaName>supervisorsystem</RefSchemaName>
+      <RefTableName>view_of_work_performed</RefTableName>
+      <RefColNames>idview_of_work_performed</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="335" parent="284" name="idpositions">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="336" parent="284" name="name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="337" parent="284" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idpositions</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="338" parent="285" name="position">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="339" parent="285" name="type_of_work">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="340" parent="285" name="Types_table_idx">
+      <ColNames>type_of_work</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="341" parent="285" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>position
+type_of_work</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="342" parent="285" name="Positions_table">
+      <ColNames>position</ColNames>
+      <RefSchemaName>supervisorsystem</RefSchemaName>
+      <RefTableName>positions</RefTableName>
+      <RefColNames>idpositions</RefColNames>
+    </foreign-key>
+    <foreign-key id="343" parent="285" name="Types_table">
+      <ColNames>type_of_work</ColNames>
+      <RefSchemaName>supervisorsystem</RefSchemaName>
+      <RefTableName>types_of_work</RefTableName>
+      <RefColNames>idtypes_of_work</RefColNames>
+    </foreign-key>
+    <column id="344" parent="286" name="idpriority_list">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="345" parent="286" name="name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="346" parent="286" name="number">
+      <Position>3</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="347" parent="286" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idpriority_list</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="348" parent="287" name="idstreets">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="349" parent="287" name="name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="350" parent="287" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idstreets</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="351" parent="288" name="idtypes_of_work">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="352" parent="288" name="name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="353" parent="288" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idtypes_of_work</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="354" parent="289" name="user">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="355" parent="289" name="district">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="356" parent="289" name="Districts_key_idx">
+      <ColNames>district</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="357" parent="289" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user
+district</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="358" parent="289" name="User_key">
+      <ColNames>user</ColNames>
+      <RefSchemaName>supervisorsystem</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>idusers</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="359" parent="289" name="Districts_key">
+      <ColNames>district</ColNames>
+      <RefSchemaName>supervisorsystem</RefSchemaName>
+      <RefTableName>districts</RefTableName>
+      <RefColNames>iddistricts</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="360" parent="290" name="idusers">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="361" parent="290" name="first_name">
       <Position>2</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="290" parent="281" name="last_name">
+    <column id="362" parent="290" name="last_name">
       <Position>3</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="291" parent="281" name="login">
+    <column id="363" parent="290" name="login">
       <Position>4</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="292" parent="281" name="password">
+    <column id="364" parent="290" name="password">
       <Position>5</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="293" parent="281" name="activ">
+    <column id="365" parent="290" name="activ">
       <Position>6</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="294" parent="281" name="PRIMARY">
+    <column id="366" parent="290" name="position">
+      <Position>7</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="367" parent="290" name="post_idx">
+      <ColNames>position</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="368" parent="290" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
+      <ColNames>idusers
+position</ColNames>
       <Primary>1</Primary>
     </key>
+    <foreign-key id="369" parent="290" name="PosUs">
+      <ColNames>position</ColNames>
+      <RefSchemaName>supervisorsystem</RefSchemaName>
+      <RefTableName>positions</RefTableName>
+      <RefColNames>idpositions</RefColNames>
+    </foreign-key>
+    <column id="370" parent="291" name="idview_of_work_performed">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="371" parent="291" name="name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="372" parent="291" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idview_of_work_performed</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="373" parent="292" name="view">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="374" parent="292" name="types">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="375" parent="292" name="Type_key_idx">
+      <ColNames>types</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="376" parent="292" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>view
+types</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="377" parent="292" name="View_key">
+      <ColNames>view</ColNames>
+      <RefSchemaName>supervisorsystem</RefSchemaName>
+      <RefTableName>view_of_work_performed</RefTableName>
+      <RefColNames>idview_of_work_performed</RefColNames>
+    </foreign-key>
+    <foreign-key id="378" parent="292" name="Type_key">
+      <ColNames>types</ColNames>
+      <RefSchemaName>supervisorsystem</RefSchemaName>
+      <RefTableName>types_of_work</RefTableName>
+      <RefColNames>idtypes_of_work</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>
